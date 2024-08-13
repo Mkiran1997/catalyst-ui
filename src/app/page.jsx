@@ -1,11 +1,14 @@
+
+
 'use client'
 
 import { Heading } from '@/components/heading'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/table'
 import { useAuth } from '@clerk/nextjs'
+import { initializeApp } from 'firebase/app'
 import { ref, onValue, getDatabase } from 'firebase/database';
 import { useEffect, useState } from 'react'
-import * as firebase from "firebase";
+// import * as firebase from "firebase";
 
 // Add your Firebase config object
 const firebaseConfig = {
@@ -19,14 +22,14 @@ const firebaseConfig = {
 };
 
 // Connect to your Firebase app
-let app = {};
-if (!firebase.apps.length) {
-  app = firebase.initializeApp(firebaseConfig);
-}else {
-  firebase.app(); // if already initialized, use that one
-}
+// let app = {};
+// if (!firebase.apps.length) {
+//   app = firebase.initializeApp(firebaseConfig);
+// }else {
+//   firebase.app(); // if already initialized, use that one
+// }
 
-// const app = initializeApp(firebaseConfig)
+const app = initializeApp(firebaseConfig)
 // Connect to your Firestore database
 const database = getDatabase(app)
 
