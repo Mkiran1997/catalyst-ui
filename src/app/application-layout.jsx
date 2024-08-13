@@ -137,10 +137,10 @@ export function ApplicationLayout({ events, children }) {
 
           <SidebarBody>
             <SidebarSection>
-              <SidebarItem href="/orders" current={pathname.startsWith('/orders')}>
+              {/* <SidebarItem href="/orders" current={pathname.startsWith('/orders')}>
                 <TicketIcon />
                 <SidebarLabel>Orders</SidebarLabel>
-              </SidebarItem>
+              </SidebarItem> */}
             </SidebarSection>
           </SidebarBody>
 

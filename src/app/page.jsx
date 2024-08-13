@@ -106,15 +106,16 @@ import { useEffect, useState } from 'react'
 
 // Add your Firebase config object
 const firebaseConfig = {
-  apiKey: "AIzaSyCSOLXug0ase9mkrkEOFpB7AfktQvRFJkM",
-  authDomain: "catalyst-firebase-demo.firebaseapp.com",
-  projectId: "catalyst-firebase-demo",
-  storageBucket: "catalyst-firebase-demo.appspot.com",
-  messagingSenderId: "2499367874",
-  appId: "1:2499367874:web:d5b1b5c1ce52a1bccabc5b",
-  measurementId: "G-4R3LW7GTXC",
+  apiKey: process.env.NEXT_PUBLIC_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
+  storageBucket:  process.env.NEXT_PUBLIC_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_SENDER_ID,
+  appId:  process.env.NEXT_PUBLIC_APP_ID,
+  measurementId:  process.env.NEXT_PUBLIC_MEASUREMENT_ID,
 };
 
+console.log("firebaseConfigfirebaseConfig",firebaseConfig);
 // Connect to your Firebase app
 const app = initializeApp(firebaseConfig)
 // Connect to your Firestore database
