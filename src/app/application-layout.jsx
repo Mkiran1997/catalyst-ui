@@ -9,7 +9,7 @@ import {
   DropdownLabel,
   DropdownMenu,
 } from '@/components/dropdown'
-import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton, SignOutButton } from '@clerk/nextjs'
+import { SignInButton, SignedIn, SignedOut, UserButton, SignOutButton } from '@clerk/nextjs'
 
 import { Navbar, NavbarItem, NavbarSection, NavbarSpacer } from '@/components/navbar'
 import {
@@ -17,41 +17,20 @@ import {
   SidebarBody,
   SidebarFooter,
   SidebarHeader,
-  SidebarHeading,
   SidebarItem,
   SidebarLabel,
   SidebarSection,
-  SidebarSpacer,
 } from '@/components/sidebar'
 import { SidebarLayout } from '@/components/sidebar-layout'
-import { Button } from '@headlessui/react'
 
 import {
   ArrowRightStartOnRectangleIcon,
   ChevronDownIcon,
-  ChevronUpIcon,
   Cog8ToothIcon,
-  LightBulbIcon,
   PlusIcon,
-  ShieldCheckIcon,
-  UserCircleIcon,
 } from '@heroicons/react/16/solid'
-import {
-  Cog6ToothIcon,
-  HomeIcon,
-  QuestionMarkCircleIcon,
-  SparklesIcon,
-  Square2StackIcon,
-  TicketIcon,
-} from '@heroicons/react/20/solid'
-import { usePathname } from 'next/navigation'
 
-import { useAuth } from '@clerk/nextjs'
-import { initializeApp } from 'firebase/app'
-import { getAuth, signInWithCustomToken } from 'firebase/auth'
-import { getFirestore } from 'firebase/firestore'
-import { doc, getDoc } from 'firebase/firestore'
-import { app } from '../../firebaseConfig'
+
 
 
 
@@ -68,26 +47,6 @@ function AccountDropdownMenu({ anchor }) {
 }
 
 export function ApplicationLayout({ events, children }) {
-
-  const db = getFirestore(app)
-  // Connect to Firebase auth
-  const auth = getAuth(app)
-
-  const { getToken, userId } = useAuth()
-
-  let pathname = usePathname()
-
-  // const signIntoFirebaseWithClerk = async () => {
-  //   const token = await getToken({ template: 'integration_firebase' })
-
-  //   const userCredentials = await signInWithCustomToken(auth, token || '')
-  //   // The userCredentials.user object can call the methods of
-  //   // the Firebase platform as an authenticated user.
-  //   console.log('User:', userCredentials.user)
-  // }
-
-
-
   return (
     <SidebarLayout
       navbar={
